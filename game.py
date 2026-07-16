@@ -1,7 +1,16 @@
 import random
 play_again = "y"
 while play_again == "y":
-    secret = random.randint(1, 100)
+    difficulty = input("Choose difficulty (easy/medium/hard): ").lower()
+    if difficulty == "easy":
+        secret = random.randint(1,50)
+    elif difficulty == "medium":
+        secret = random.randint(1,100)
+    elif difficulty == "hard":
+        secret = random.randint(1,200)
+    else:
+        print("Invalid choice. Medium selected.")
+        secret = random.randint(1,100)
 
     guess=int(input("Find the target number: "))
 
