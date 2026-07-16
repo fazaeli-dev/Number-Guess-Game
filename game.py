@@ -14,9 +14,10 @@ while play_again == "y":
 
     guess=int(input("Find the target number: "))
 
-    tries = 0
+    tries = 1
+    max_tries = 7
 
-    while guess!=secret:
+    while guess!=secret and tries < max_tries:
         tries = tries + 1
         if guess > secret:
             print("The target number is smaller")
@@ -26,6 +27,9 @@ while play_again == "y":
             guess=int(input("Try again: "))
 
     tries = tries + 1
-    print("Well done, your guess is correct.")
-    print("Number of guesses: ",tries)
+    if guess != secret:
+        print("Game Over! You used all your tries.")
+    if guess == secret:
+        print("Well done, your guess is correct.")
+        print("Number of guesses: ",tries)
     play_again = input("Play again? (y/n): ").lower()
