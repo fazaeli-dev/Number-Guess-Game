@@ -29,6 +29,7 @@ while play_again == "y":
     tries = tries + 1
     if guess != secret:
         print("Game Over! You used all your tries.")
+        print("The correct number was:",secret)
     if guess == secret:
         print("Well done, your guess is correct.")
         print("Number of guesses: ",tries)
