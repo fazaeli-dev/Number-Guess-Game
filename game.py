@@ -24,9 +24,9 @@ while play_again == "y":
         elif guess < secret:
             print("The target number is larger")
             guess=int(input("Try again: "))
-            tries = tries + 1
+        tries = tries + 1
 
-    tries = tries + 1
+    
     if guess != secret:
         print("Game Over! You used all your tries.")
         print("The correct number was:",secret)
